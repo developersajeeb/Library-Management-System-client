@@ -7,9 +7,9 @@ const App = () => {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
+      <main className="w-full">
         <SidebarTrigger />
-        <Outlet/>
+        <div className="pl-5 pr-10 py-5"><Outlet/></div>
       </main>
     </SidebarProvider>
   );

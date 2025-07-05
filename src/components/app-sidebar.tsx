@@ -1,5 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
-
+import { BookText, LayoutDashboard, ScrollText } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -7,55 +6,49 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { NavLink } from "react-router"
 
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Dashboard",
+    url: "/",
+    icon: LayoutDashboard,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Books",
+    url: "books",
+    icon: BookText,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Borrow Summary",
+    url: "borrow-summary",
+    icon: ScrollText,
   },
 ]
 
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarContent>
+      <SidebarContent className="bg-white py-6 px-4">
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel className="mb-12">
+            <a href="/"><img src="/image/logo.png" alt="EduShelf" /></a>
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
+                <SidebarMenuItem key={item.title} className="">
+                    <NavLink to={item.url}
+                      className={({ isActive }) =>
+                        `flex items-center gap-2 px-4 py-2 rounded-md ${isActive ? "bg-[#A87242] text-white" : "hover:bg-[#fbfbd4] text-gray-600 hover:text-[#A87242]"
+                        } duration-300 text-base font-medium mb-2`
+                      }>
+                      <item.icon size={20} />
+                      <span className="">{item.title}</span>
+                    </NavLink>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>

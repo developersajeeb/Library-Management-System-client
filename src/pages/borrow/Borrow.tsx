@@ -1,11 +1,11 @@
 import React from 'react';
 
-const HomePage = () => {
+const Borrow = () => {
     return (
         <div>
-            This is home
+            This is borrow
         </div>
     );
 };
 
-export default HomePage;
+export default Borrow;
