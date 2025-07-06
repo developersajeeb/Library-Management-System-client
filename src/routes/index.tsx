@@ -4,6 +4,7 @@ import BorrowSummary from "@/pages/borrow-summary/BorrowSummary";
 import Borrow from "@/pages/borrow/Borrow";
 import CreateBook from "@/pages/create-book/CreateBook";
 import Dashboard from "@/pages/dashboard/Dashboard";
+import EditBook from "@/pages/edit-book/EditBook";
 import SingleBook from "@/pages/single-book/SingleBook";
 import { createBrowserRouter } from "react-router";
 
@@ -26,11 +27,15 @@ const route = createBrowserRouter([
                 element: <CreateBook />
             },
             {
+                path: 'edit-book/:id',
+                element: <EditBook />
+            },
+            {
                 path: 'books/:id',
                 element: <SingleBook />
             },
             {
-                path: 'borrow/:id',
+                path: 'borrow/:bookId',
                 element: <Borrow />
             },
             {
