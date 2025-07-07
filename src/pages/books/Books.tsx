@@ -13,7 +13,7 @@ const BooksPage = () => {
     const [selectedBookId, setSelectedBookId] = useState<string | null>(null);
     const [deleteBook] = useDeleteBookMutation();
     const { data: books, isLoading, isError } = useGetBooksQuery();
-    if (isError) return toast.error('Something went wrong!');
+    if (isError) return toast.error('Something went wrong!', {position: 'top-center'});
     const bookList = books?.data ?? [];
 
     const openDeleteDialog = (id: string) => {

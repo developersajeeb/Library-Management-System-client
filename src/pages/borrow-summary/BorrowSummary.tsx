@@ -7,7 +7,7 @@ const BorrowSummary = () => {
   const { data, isLoading, isError } = useGetBorrowSummaryQuery();
 
   if (isError) {
-    toast.error('Failed to load borrow summary');
+    toast.error('Failed to load borrow summary', {position: 'top-center'});
   }
 
   const summaryList = data?.data ?? [];
