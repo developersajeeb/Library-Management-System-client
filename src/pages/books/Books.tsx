@@ -90,9 +90,9 @@ const BooksPage = () => {
                                     <TableCell className="text-center">{book.copies}</TableCell>
                                     <TableCell>
                                         {book.available ? (
-                                            <span className='text-sm bg-green-50 text-green-500 px-3 py-[6px] rounded-full'>Available</span>
+                                            <span className='text-sm text-green-600'>Available</span>
                                         ) : (
-                                            <span className='text-sm bg-red-50 text-red-500 px-3 py-[6px] rounded-full'>Not Available</span>
+                                            <span className='text-sm text-red-600'>Not Available</span>
                                         )}
                                     </TableCell>
                                     <TableCell className='flex gap-2'>

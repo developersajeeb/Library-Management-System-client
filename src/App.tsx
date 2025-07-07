@@ -11,7 +11,7 @@ const App = () => {
       <SidebarProvider>
         <AppSidebar />
         <Toaster />
-        <main className="w-full">
+        <main className="w-full overflow-hidden">
           <nav className="flex items-center justify-between p-4 flex-row-reverse md:flex-row bg-gray-100 md:bg-transparent">
             <div className="bg-gray-200 p-2 rounded-full cursor-pointer"><SidebarTrigger className="cursor-pointer" /></div>
             <img src="/image/logo.png" alt="EduShelf" className="w-full max-w-40 md:hidden" />
