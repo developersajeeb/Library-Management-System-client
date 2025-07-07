@@ -3,7 +3,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useDeleteBookMutation, useGetBooksQuery } from '@/features/api/book&borrowApi';
 import type { Book } from '@/types';
-import { BookPlus, BookText, Pencil, Trash2 } from 'lucide-react';
+import { BookPlus, BookText, Eye, Pencil, Trash2 } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router';
 import { toast } from 'sonner';
@@ -128,6 +128,7 @@ const BooksPage = () => {
                                             </AlertDialogContent>
                                         </AlertDialog>
                                         <NavLink to={`/borrow/${book._id}`} className='cursor-pointer flex items-center gap-1 text-sm font-medium border border-yellow-500 text-yellow-600 bg-yellow-50 px-3 py-[6px] rounded-md'><BookText size={14} /> Borrow</NavLink>
+                                        <NavLink to={`/books/${book._id}`} className='cursor-pointer flex items-center gap-1 text-sm font-medium border border-blue-500 text-blue-600 bg-blue-50 px-3 py-[6px] rounded-md'><Eye size={14} /> View</NavLink>
                                     </TableCell>
                                 </TableRow>
                             )

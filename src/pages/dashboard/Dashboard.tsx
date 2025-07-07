@@ -1,10 +1,15 @@
+import { useGetBooksQuery, useGetBorrowSummaryQuery } from "@/features/api/book&borrowApi";
+
 const Dashboard = () => {
+    const { data: books } = useGetBooksQuery();
+    const { data: borrowSummary } = useGetBorrowSummaryQuery();
+
     return (
         <>
-            <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
                 <div className="p-5 rounded-lg bg-gray-100">
                     <h3 className="text-sm text-green-500 font-semibold">Total Books</h3>
-                    <p className="text-gray-700 text-2xl font-bold mt-2">200</p>
+                    <p className="text-gray-700 text-2xl font-bold mt-2">{books?.data?.length || 0}</p>
                 </div>
                 <div className="p-5 rounded-lg bg-gray-100">
                     <h3 className="text-sm text-green-700 font-semibold">Returned Books</h3>
@@ -20,7 +25,7 @@ const Dashboard = () => {
                 </div>
                 <div className="p-5 rounded-lg bg-gray-100">
                     <h3 className="text-sm text-yellow-600 font-semibold">Borrowed Books</h3>
-                    <p className="text-gray-700 text-2xl font-bold mt-2">200</p>
+                    <p className="text-gray-700 text-2xl font-bold mt-2">{borrowSummary?.data?.length || 0}</p>
                 </div>
                 <div className="p-5 rounded-lg bg-gray-100">
                     <h3 className="text-sm text-purple-600 font-semibold">Visitors</h3>
